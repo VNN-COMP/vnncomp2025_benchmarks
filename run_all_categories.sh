@@ -144,8 +144,8 @@ do
 	
     if [[ $MEASURE_OVERHEAD == "true" && $RUN_WHICH_NETWORKS == "all" ]]; then
 	# measure overhead at end (hardcoded model)
-	ONNX_PATH="${VNNCOMP_FOLDER}/benchmarks/test/test_nano.onnx"
-	VNNLIB_PATH="${VNNCOMP_FOLDER}/benchmarks/test/test_nano.vnnlib"
+	ONNX_PATH="${VNNCOMP_FOLDER}/benchmarks/test/onnx/test_nano.onnx"
+	VNNLIB_PATH="${VNNCOMP_FOLDER}/benchmarks/test/vnnlib/test_nano.vnnlib"
 	TIMEOUT=120
 	$SCRIPT_PATH/run_single_instance.sh v1 $TOOL_FOLDER $CATEGORY $ONNX_PATH $VNNLIB_PATH $TIMEOUT $RESULT_CSV_FILE
     fi
