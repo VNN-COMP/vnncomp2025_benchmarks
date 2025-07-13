@@ -18,3 +18,8 @@ rm -r large_models large_models.zip
 
 echo "Unzipping"
 gunzip -r benchmarks/
+
+echo "CREATING HARDCODED SYMLINKS FOR BROKEN BENCHMARKS"
+ln -sf ../../nn4sys_2023/onnx/mscn_2048d.onnx benchmarks/nn4sys/onnx/mscn_2048d.onnx
+ln -sf ../../nn4sys_2023/onnx/mscn_2048d_dual.onnx benchmarks/nn4sys/onnx/mscn_2048d_dual.onnx
+ln -sf ../../vggnet16_2023/onnx/vgg16-7.onnx benchmarks/vggnet16_2022/onnx/vgg16-7.onnx 
