@@ -124,10 +124,10 @@ do
         VNNLIB_FILENAME=$(echo $VNNLIB | rev | cut -d "/" -f 1 | cut -c8- | rev)
         COUNTEREXAMPLE_FILE=${COUNTEREXAMPLES_FOLDER}/${CATEGORY}/${ONNX_FILENAME}_${VNNLIB_FILENAME}.counterexample
         # If the benchmark is the safenlp benchmark and the vnnlib file contains "ruarobot", prepend ruarobot_ to the filname
-        if [[ $CATEGORY == "safenlp" && $VNNLIB == *"ruarobot"* ]]; then
+        if [[ $CATEGORY == *"safenlp"* && $VNNLIB == *"ruarobot"* ]]; then
             COUNTEREXAMPLE_FILE=${COUNTEREXAMPLES_FOLDER}/${CATEGORY}/ruarobot_${ONNX_FILENAME}_${VNNLIB_FILENAME}.counterexample
         fi
-        if [[ $CATEGORY == "safenlp" && $VNNLIB == *"medical"* ]]; then
+        if [[ $CATEGORY == *"safenlp"* && $VNNLIB == *"medical"* ]]; then
             COUNTEREXAMPLE_FILE=${COUNTEREXAMPLES_FOLDER}/${CATEGORY}/medical_${ONNX_FILENAME}_${VNNLIB_FILENAME}.counterexample
         fi
         $SCRIPT_PATH/run_single_instance.sh v1 $TOOL_FOLDER $CATEGORY $ONNX_PATH $VNNLIB_PATH $TIMEOUT $RESULT_CSV_FILE ${COUNTEREXAMPLE_FILE}
